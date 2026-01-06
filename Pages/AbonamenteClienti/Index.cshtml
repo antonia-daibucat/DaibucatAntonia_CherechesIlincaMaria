@@ -1,0 +1,60 @@
+﻿@page
+@model DaibucatAntonia_CherechesIlincaMaria.Pages.AbonamenteClienti.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AbonamentClient[0].User)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AbonamentClient[0].Abonament)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AbonamentClient[0].DataInceput)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AbonamentClient[0].DataSfarsit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AbonamentClient[0].Activ)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.AbonamentClient) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Abonament.AbonamentId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataInceput)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataSfarsit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Activ)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.AbonamentClientId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.AbonamentClientId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.AbonamentClientId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

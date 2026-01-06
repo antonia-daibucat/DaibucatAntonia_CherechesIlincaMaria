@@ -1,8 +1,11 @@
-﻿namespace DaibucatAntonia_CherechesIlincaMaria.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace DaibucatAntonia_CherechesIlincaMaria.Models
 {
     public class User
     {
         public int UserId { get; set; }
+        [Required]
         public string Email { get; set; }
         public string ParolaHash { get; set; } // Stochezi parola criptată
         public string Nume { get; set; }

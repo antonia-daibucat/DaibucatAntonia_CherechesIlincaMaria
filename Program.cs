@@ -1,7 +1,12 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using DaibucatAntonia_CherechesIlincaMaria.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<DaibucatAntonia_CherechesIlincaMariaContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DaibucatAntonia_CherechesIlincaMariaContext") ?? throw new InvalidOperationException("Connection string 'DaibucatAntonia_CherechesIlincaMariaContext' not found.")));
 
 var app = builder.Build();
 

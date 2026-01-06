@@ -1,0 +1,48 @@
+﻿@page
+@model DaibucatAntonia_CherechesIlincaMaria.Pages.Abonamente.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Abonament[0].NumeAbonament)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Abonament[0].Pret)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Abonament[0].Descriere)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Abonament) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeAbonament)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pret)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descriere)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.AbonamentId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.AbonamentId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.AbonamentId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

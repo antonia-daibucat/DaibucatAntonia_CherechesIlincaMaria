@@ -1,0 +1,45 @@
+﻿@page
+@model DaibucatAntonia_CherechesIlincaMaria.Pages.Abonamente.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Abonament</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Abonament.AbonamentId" />
+            <div class="form-group">
+                <label asp-for="Abonament.NumeAbonament" class="control-label"></label>
+                <input asp-for="Abonament.NumeAbonament" class="form-control" />
+                <span asp-validation-for="Abonament.NumeAbonament" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Abonament.Pret" class="control-label"></label>
+                <input asp-for="Abonament.Pret" class="form-control" />
+                <span asp-validation-for="Abonament.Pret" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Abonament.Descriere" class="control-label"></label>
+                <input asp-for="Abonament.Descriere" class="form-control" />
+                <span asp-validation-for="Abonament.Descriere" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
