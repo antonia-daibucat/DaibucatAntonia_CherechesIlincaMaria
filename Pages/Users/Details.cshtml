@@ -45,6 +45,37 @@
         </dd>
     </dl>
 </div>
+<h4>Istoric Abonamente</h4>
+<hr />
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tip Abonament</th>
+            <th>Data Inceput</th>
+            <th>Data Sfarsit</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.User.AbonamenteClient)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Abonament.NumeAbonament)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataInceput)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataSfarsit)
+                </td>
+                <td>
+                    @(item.Activ ? "Activ" : "Inactiv")
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.User.UserId">Edit</a> |
     <a asp-page="./Index">Back to List</a>

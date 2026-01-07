@@ -36,7 +36,11 @@ namespace DaibucatAntonia_CherechesIlincaMaria.Pages.AbonamenteClienti
                 return NotFound();
             }
             AbonamentClient = abonamentclient;
-           ViewData["AbonamentId"] = new SelectList(_context.Abonament, "AbonamentId", "AbonamentId");
+            var users = _context.User.Select(u => new {
+                u.UserId,
+                FullName = u.Nume + " " + u.Prenume + " (" + u.Email + ")"
+            });
+            ViewData["AbonamentId"] = new SelectList(_context.Abonament, "AbonamentId", "NumeAbonament");
            ViewData["UserId"] = new SelectList(_context.User, "UserId", "Email");
             return Page();
         }
@@ -45,6 +49,8 @@ namespace DaibucatAntonia_CherechesIlincaMaria.Pages.AbonamenteClienti
         // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
+            ModelState.Remove("AbonamentClient.User");
+            ModelState.Remove("AbonamentClient.Abonament");
             if (!ModelState.IsValid)
             {
                 return Page();

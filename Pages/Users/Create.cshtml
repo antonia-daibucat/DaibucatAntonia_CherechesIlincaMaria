@@ -49,11 +49,13 @@
                 <input asp-for="User.Telefon" class="form-control" />
                 <span asp-validation-for="User.Telefon" class="text-danger"></span>
             </div>
-           
+
 
             <div class="form-group">
-                <label asp-for="User.Rol" class="control-label"></label>
-                <input asp-for="User.Rol" class="form-control" />
+                <label asp-for="User.Rol" class="control-label">Rol Utilizator</label>
+                <select asp-for="User.Rol" class="form-control" asp-items="ViewBag.Roluri">
+                    <option value="">-- Alege Rolul --</option>
+                </select>
                 <span asp-validation-for="User.Rol" class="text-danger"></span>
             </div>
             

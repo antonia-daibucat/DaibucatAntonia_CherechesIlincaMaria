@@ -25,7 +25,8 @@ namespace DaibucatAntonia_CherechesIlincaMaria.Pages.AbonamenteClienti
         {
             AbonamentClient = await _context.AbonamentClient
                 .Include(a => a.Abonament)
-                .Include(a => a.User).ToListAsync();
+                .Include(a => a.User)
+                .ToListAsync();
         }
     }
 }

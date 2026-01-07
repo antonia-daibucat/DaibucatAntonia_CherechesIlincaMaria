@@ -23,13 +23,24 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-page="/Abonamente/Index">Abonamente</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-page="/Users/Index">Membri Sala</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-page="/AbonamenteClienti/Index">Abonamente Active</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
                     </ul>
                 </div>
             </div>
+
         </nav>
     </header>
+    
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

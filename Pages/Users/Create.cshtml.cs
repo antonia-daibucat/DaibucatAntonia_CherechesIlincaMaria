@@ -21,6 +21,15 @@ namespace DaibucatAntonia_CherechesIlincaMaria.Pages.Users
 
         public IActionResult OnGet()
         {
+            var listaRoluri = new List<object>
+    {
+        new { Id = "Admin", Name = "Admin" },
+        new { Id = "Client", Name = "Client" }
+    };
+
+            
+            ViewData["Roluri"] = new SelectList(listaRoluri, "Id", "Name");
+
             return Page();
         }
 

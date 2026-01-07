@@ -35,10 +35,10 @@
 @foreach (var item in Model.AbonamentClient) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.User.Email)
+                    @Html.DisplayFor(modelItem => item.User.Nume) @Html.DisplayFor(modelItem => item.User.Prenume)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Abonament.AbonamentId)
+                @Html.DisplayFor(modelItem => item.Abonament.NumeAbonament)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DataInceput)

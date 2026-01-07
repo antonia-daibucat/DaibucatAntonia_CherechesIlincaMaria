@@ -12,5 +12,7 @@ namespace DaibucatAntonia_CherechesIlincaMaria.Models
         public decimal Pret { get; set; }
         public string Descriere { get; set; }
 
+        // Relație: Un tip de abonament se poate regăsi la mulți clienți
+        public ICollection<AbonamentClient>? AbonamenteClient { get; set; }
     }
 }

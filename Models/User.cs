@@ -12,6 +12,9 @@ namespace DaibucatAntonia_CherechesIlincaMaria.Models
         public string Prenume { get; set; }
         public string Telefon { get; set; }
         public string Rol { get; set; } // "Admin" sau "Client"
-        
+        // Relație: Un utilizator poate avea multe abonamente
+        public ICollection<AbonamentClient>? AbonamenteClient { get; set; }
     }
+
 }
+

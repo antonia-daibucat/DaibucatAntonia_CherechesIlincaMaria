@@ -14,8 +14,8 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="AbonamentClient.UserId" class="control-label"></label>
-                <select asp-for="AbonamentClient.UserId" class ="form-control" asp-items="ViewBag.UserId" ></select>
+                <label asp-for="AbonamentClient.User.Email" class="control-label">Email Client</label>
+                <input name="ClientEmail" class="form-control" />
             </div>
             <div class="form-group">
                 <label asp-for="AbonamentClient.AbonamentId" class="control-label"></label>

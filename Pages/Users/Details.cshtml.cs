@@ -27,8 +27,11 @@ namespace DaibucatAntonia_CherechesIlincaMaria.Pages.Users
             {
                 return NotFound();
             }
-
-            var user = await _context.User.FirstOrDefaultAsync(m => m.UserId == id);
+            var user = await _context.User
+               .Include(u => u.AbonamenteClient)
+               .ThenInclude(ac => ac.Abonament)
+               .FirstOrDefaultAsync(m => m.UserId == id);
+           
             if (user == null)
             {
                 return NotFound();
