@@ -14,7 +14,5 @@
         public DateTime DataSfarsit { get; set; }
         public bool Activ { get; set; }
 
-        // Relație: Un AbonamentClient poate avea multe Plati
-        public ICollection<Plata> Plati { get; set; }
     }
 }

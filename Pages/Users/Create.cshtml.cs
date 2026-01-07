@@ -29,9 +29,12 @@ namespace DaibucatAntonia_CherechesIlincaMaria.Pages.Users
 
         // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
+             
         {
+            Console.WriteLine("AM INTRAT IN POST");
             if (!ModelState.IsValid)
             {
+                Console.WriteLine("MODEL INVALID");
                 return Page();
             }
 

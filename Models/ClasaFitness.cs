@@ -11,8 +11,6 @@ namespace DaibucatAntonia_CherechesIlincaMaria.Models
         public string Descriere { get; set; }
         public string Antrenor { get; set; }
         public string Zi { get; set; }
-
-        [DataType(DataType.Date)]
         public DateTime Ora { get; set; } 
     }
 }
