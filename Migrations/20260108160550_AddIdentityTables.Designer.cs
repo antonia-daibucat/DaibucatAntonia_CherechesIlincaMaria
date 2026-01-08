@@ -4,6 +4,7 @@ using DaibucatAntonia_CherechesIlincaMaria.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DaibucatAntonia_CherechesIlincaMaria.Migrations
 {
     [DbContext(typeof(DaibucatAntonia_CherechesIlincaMariaContext))]
-    partial class DaibucatAntonia_CherechesIlincaMariaContextModelSnapshot : ModelSnapshot
+    [Migration("20260108160550_AddIdentityTables")]
+    partial class AddIdentityTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

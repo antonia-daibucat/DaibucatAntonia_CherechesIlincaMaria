@@ -4,10 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using DaibucatAntonia_CherechesIlincaMaria.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace DaibucatAntonia_CherechesIlincaMaria.Data
 {
-    public class DaibucatAntonia_CherechesIlincaMariaContext : DbContext
+    public class DaibucatAntonia_CherechesIlincaMariaContext : IdentityDbContext
     {
         public DaibucatAntonia_CherechesIlincaMariaContext (DbContextOptions<DaibucatAntonia_CherechesIlincaMariaContext> options)
             : base(options)
