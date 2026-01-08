@@ -28,7 +28,12 @@ namespace DaibucatAntonia_CherechesIlincaMaria.Pages.Plati
                 return NotFound();
             }
 
-            var plata = await _context.Plata.FirstOrDefaultAsync(m => m.PlataId == id);
+            var plata = await _context.Plata
+                            .Include(p => p.AbonamentClient)
+                            .ThenInclude(ac => ac.User)
+                            .Include(p => p.AbonamentClient)
+                            .ThenInclude(ac => ac.Abonament)
+                            .FirstOrDefaultAsync(m => m.PlataId == id);
             if (plata == null)
             {
                 return NotFound();

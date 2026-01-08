@@ -12,23 +12,47 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Plata.AbonamentClient)
+            Email Client
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Plata.AbonamentClient.AbonamentClientId)
+            @Html.DisplayFor(model => model.Plata.AbonamentClient.User.Email)
         </dd>
+
+        <dt class="col-sm-2">
+            Nume Abonament
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Plata.AbonamentClient.Abonament.NumeAbonament)
+        </dd>
+
+        <dt class="col-sm-2">
+            Data Început Abonament
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Plata.AbonamentClient.DataInceput)
+        </dd>
+
+        <dt class="col-sm-2">
+            Data Sfârșit Abonament
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Plata.AbonamentClient.DataSfarsit)
+        </dd>
+
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Plata.Suma)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Plata.Suma)
         </dd>
+
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Plata.DataPlata)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Plata.DataPlata)
         </dd>
+
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Plata.MetodaPlata)
         </dt>

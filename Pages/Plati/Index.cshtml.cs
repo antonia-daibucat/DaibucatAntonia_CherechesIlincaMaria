@@ -24,7 +24,11 @@ namespace DaibucatAntonia_CherechesIlincaMaria.Pages.Plati
         public async Task OnGetAsync()
         {
             Plata = await _context.Plata
-                .Include(p => p.AbonamentClient).ToListAsync();
+                    .Include(p => p.AbonamentClient)
+                    .ThenInclude(ac => ac.User)
+                    .Include(p => p.AbonamentClient) 
+                    .ThenInclude(ac => ac.Abonament)
+                    .ToListAsync();
         }
     }
 }

@@ -31,6 +31,16 @@
                 <input asp-for="AbonamentClient.DataSfarsit" class="form-control" />
                 <span asp-validation-for="AbonamentClient.DataSfarsit" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="MetodaPlataSelectata" class="control-label">Metoda de Plată</label>
+                <select asp-for="MetodaPlataSelectata" class="form-control">
+                    <option value="">-- Selectează Metoda --</option>
+                    <option value="Cash la Receptie">Cash la Receptie</option>
+                    <option value="Card Bancar">Card Bancar</option>
+                    <option value="Transfer Bancar">Transfer Bancar</option>
+                </select>
+                <span asp-validation-for="MetodaPlataSelectata" class="text-danger"></span>
+            </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="AbonamentClient.Activ" /> @Html.DisplayNameFor(model => model.AbonamentClient.Activ)

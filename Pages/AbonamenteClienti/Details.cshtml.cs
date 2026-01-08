@@ -28,7 +28,9 @@ namespace DaibucatAntonia_CherechesIlincaMaria.Pages.AbonamenteClienti
                 return NotFound();
             }
 
-            var abonamentclient = await _context.AbonamentClient.FirstOrDefaultAsync(m => m.AbonamentClientId == id);
+            var abonamentclient = await _context.AbonamentClient.Include(ac => ac.User) 
+                            .Include(ac => ac.Abonament) 
+                            .FirstOrDefaultAsync(m => m.AbonamentClientId == id);
             if (abonamentclient == null)
             {
                 return NotFound();

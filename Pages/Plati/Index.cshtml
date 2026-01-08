@@ -13,42 +13,32 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Plata[0].AbonamentClient)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Plata[0].Suma)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Plata[0].DataPlata)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Plata[0].MetodaPlata)
-            </th>
+            <th>Email Client</th>
+            <th>Nume Abonament</th>
+            <th>@Html.DisplayNameFor(model => model.Plata[0].Suma)</th>
+            <th>@Html.DisplayNameFor(model => model.Plata[0].DataPlata)</th>
+            <th>@Html.DisplayNameFor(model => model.Plata[0].MetodaPlata)</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Plata) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.AbonamentClient.AbonamentClientId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Suma)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataPlata)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MetodaPlata)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.PlataId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.PlataId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.PlataId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Plata)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.AbonamentClient.User.Email)</td>
+
+                <td>@Html.DisplayFor(modelItem => item.AbonamentClient.Abonament.NumeAbonament)</td>
+
+                <td>@Html.DisplayFor(modelItem => item.Suma)</td>
+                <td>@Html.DisplayFor(modelItem => item.DataPlata)</td>
+                <td>@Html.DisplayFor(modelItem => item.MetodaPlata)</td>
+
+                <td>
+                    <a asp-page="./Details" asp-route-id="@item.PlataId">Details</a> |
+                    <a asp-page="./Edit" asp-route-id="@item.PlataId">Edit</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.PlataId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
