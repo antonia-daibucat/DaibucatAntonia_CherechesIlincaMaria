@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace DaibucatAntonia_CherechesIlincaMaria.Pages.AbonamenteClienti
 {
-    
+    [Authorize(Roles = "Admin")]
     public class CreateModel : PageModel
     {
         private readonly DaibucatAntonia_CherechesIlincaMaria.Data.DaibucatAntonia_CherechesIlincaMariaContext _context;
@@ -69,7 +69,7 @@ namespace DaibucatAntonia_CherechesIlincaMaria.Pages.AbonamenteClienti
 
             if (abonamentTip == null)
             {
-                // Aceasta nu ar trebui să se întâmple, dar e bine să ne protejăm
+                
                 ModelState.AddModelError("", "Tipul de abonament selectat nu este valid.");
                 return Page();
             }
@@ -80,19 +80,19 @@ namespace DaibucatAntonia_CherechesIlincaMaria.Pages.AbonamenteClienti
             // 3. Crearea și Adăugarea Obiectului Plata
             var plataNoua = new Plata
             {
-                // Leagă plata de noul AbonamentClient
+                
                 AbonamentClient = AbonamentClient,
 
                 Suma = abonamentTip.Pret,
                 DataPlata = DateTime.Now,
 
-                // 👈 MODIFICAREA CHEIE: Folosește valoarea din dropdown
+                
                 MetodaPlata = MetodaPlataSelectata
             };
 
             _context.Plata.Add(plataNoua);
 
-            // 4. Salvează ambele obiecte (AbonamentClient și Plata) în baza de date
+            
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

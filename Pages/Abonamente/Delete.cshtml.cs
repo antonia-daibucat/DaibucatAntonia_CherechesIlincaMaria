@@ -11,7 +11,8 @@ using System.Threading.Tasks;
 
 namespace DaibucatAntonia_CherechesIlincaMaria.Pages.Abonamente
 {
-   
+
+    [Authorize(Roles = "Admin")]
     public class DeleteModel : PageModel
     {
         private readonly DaibucatAntonia_CherechesIlincaMaria.Data.DaibucatAntonia_CherechesIlincaMariaContext _context;

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DaibucatAntonia_CherechesIlincaMaria.Pages.Plati
 {
-    
+    [Authorize(Roles = "Admin")]
     public class IndexModel : PageModel
     {
         private readonly DaibucatAntonia_CherechesIlincaMaria.Data.DaibucatAntonia_CherechesIlincaMariaContext _context;
