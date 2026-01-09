@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using ProGymMobile.Services;
+using ProGymMobile.ViewModels;
 
 namespace ProGymMobile
 {
@@ -18,6 +20,10 @@ namespace ProGymMobile
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+            builder.Services.AddSingleton<ClasaFitnessService>();
+            builder.Services.AddSingleton<ClaseFitnessViewModel>();
+            builder.Services.AddSingleton<Views.ClaseFitnessPage>();
+            builder.Services.AddSingleton<Views.HomePage>();
 
             return builder.Build();
         }
