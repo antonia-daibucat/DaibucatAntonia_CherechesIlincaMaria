@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddControllers();
 builder.Services.AddDbContext<DaibucatAntonia_CherechesIlincaMariaContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DaibucatAntonia_CherechesIlincaMariaContext") ?? throw new InvalidOperationException("Connection string 'DaibucatAntonia_CherechesIlincaMariaContext' not found.")));
 
@@ -48,6 +49,7 @@ app.UseRouting();
 app.UseAuthentication();
 
 app.UseAuthorization();
+app.MapControllers();
 
 app.MapRazorPages();
 
