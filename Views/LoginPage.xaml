@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProGymMobile.Views.LoginPage"
+             Title="LoginPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+
+            <Label Text="Bine ai revenit!" 
+                   FontSize="28" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   TextColor="{StaticResource Primary}" />
+
+            <Label Text="Introdu datele pentru a accesa profilul tău." 
+                   HorizontalOptions="Center" />
+
+            <Entry x:Name="entEmail" 
+                   Placeholder="Email" 
+                   Keyboard="Email" />
+
+            <Entry x:Name="entParola" 
+                   Placeholder="Parolă" 
+                   IsPassword="True" />
+
+            <Button Text="Conectare" 
+                    Clicked="OnLoginClicked" 
+                    BackgroundColor="{StaticResource Primary}" 
+                    FontSize="Medium" />
+
+            <Button Text="Nu am cont? Înregistrează-te aici" 
+                    Clicked="OnGoToRegisterClicked" 
+                    BackgroundColor="Transparent" 
+                    TextColor="{StaticResource Secondary}" 
+                    FontSize="Small" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

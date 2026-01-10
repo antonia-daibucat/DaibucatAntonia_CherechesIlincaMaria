@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProGymMobile.Views.ProfilePage"
+             Title="ProfilePage">
+    <ScrollView Padding="20">
+        <StackLayout Spacing="15">
+            <Label Text="Email (Obligatoriu):" />
+            <Entry x:Name="entEmail" Text="{Binding Email}" Keyboard="Email" />
+            
+            <Label Text="Parolă:" />
+            <Entry x:Name="entParola" IsPassword="True" Placeholder="******" />
+
+            <Label Text="Nume:" />
+            <Entry x:Name="entNume" Text="{Binding Nume}" />
+
+            <Label Text="Telefon:" />
+            <Entry x:Name="entTelefon" Text="{Binding Telefon}" Keyboard="Telephone" />
+
+            <Button Text="Salvează Profil" Clicked="OnSaveProfileClicked" BackgroundColor="{StaticResource Primary}" />
+
+            <Label Text="Abonamente active:" FontAttributes="Bold" Margin="0,15,0,0" />
+            <ListView x:Name="listAbonamente" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding TipAbonament}" Detail="{Binding DataSfarsit, StringFormat='Expiră la: {0:dd.MM.yyyy}'}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Text="Șterge Cont" Clicked="OnDeleteAccountClicked" BackgroundColor="Red" Margin="0,20,0,0" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

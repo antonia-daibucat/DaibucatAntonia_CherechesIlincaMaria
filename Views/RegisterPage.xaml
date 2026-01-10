@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProGymMobile.Views.RegisterPage"
+             Title="Creare Cont">
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <Label Text="Email (obligatoriu pentru logare):" />
+        <Entry x:Name="entEmail" Placeholder="adresa@email.com" Keyboard="Email" />
+
+        <Label Text="Parola:" />
+        <Entry x:Name="entParola" Placeholder="Parolă" IsPassword="True" />
+
+        <Label Text="Nume:" />
+        <Entry x:Name="entNume" Placeholder="Nume" />
+
+        <Label Text="Prenume:" />
+        <Entry x:Name="entPrenume" Placeholder="Prenume" />
+
+        <Label Text="Telefon:" />
+        <Entry x:Name="entTelefon" Placeholder="07xxxxxxxx" Keyboard="Telephone" />
+
+        <Button Text="Creează Cont și Salvează în DB" 
+            Clicked="OnRegisterClicked" 
+            BackgroundColor="{StaticResource Primary}" />
+    </VerticalStackLayout>
+</ContentPage>

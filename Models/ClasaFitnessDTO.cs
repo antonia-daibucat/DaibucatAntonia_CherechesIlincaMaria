@@ -14,7 +14,7 @@ namespace ProGymMobile.Models
         public string Antrenor { get; set; }
         public string Zi { get; set; }
 
-        // DateTimeOffset este adesea mai sigur decât DateTime pentru datele JSON
+       
         public DateTimeOffset OraInceput { get; set; }
     }
 }

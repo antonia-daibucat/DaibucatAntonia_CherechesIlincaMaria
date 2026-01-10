@@ -14,7 +14,7 @@ namespace ProGymMobile.Services
         private JsonSerializerOptions? options;
 
 
-        // Dacă rulezi pe iOS Emulator sau Windows:
+        
         private const string BaseUrl = "https://localhost:7296";
 
 
@@ -43,12 +43,12 @@ namespace ProGymMobile.Services
 
                 var options = new JsonSerializerOptions
                 {
-                    PropertyNameCaseInsensitive = true // Permite potrivirea automată a numelui proprietăților 
+                    PropertyNameCaseInsensitive = true  
                 };
 
                 return JsonSerializer.Deserialize<List<ClasaFitnessDTO>>(content, options);
             }
-            // În caz de eșec, returnează o listă goală sau aruncă o excepție
+           
             return new List<ClasaFitnessDTO>();
         }
     }

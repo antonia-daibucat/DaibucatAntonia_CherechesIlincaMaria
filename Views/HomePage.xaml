@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProGymMobile.Views.HomePage"
              Title="HomePage">
-    <ScrollView>
+    
+    
         <StackLayout Padding="30" Spacing="25" VerticalOptions="Center">
 
             <Label 
@@ -17,7 +18,14 @@
                 Text="Alege secțiunea dorită din meniul de mai jos."
                 FontSize="Medium"
                 HorizontalOptions="Center" />
-
+            <Button 
+                Text="Profilul Meu"
+                BackgroundColor="{StaticResource Primary}"
+                TextColor="White"
+                CornerRadius="10"
+                Padding="20"
+                Clicked="OnProfileClicked"
+                FontSize="Large" />
             <Button 
                 Text="Orarul Clase de Grup"
                 BackgroundColor="{StaticResource Secondary}"
@@ -29,5 +37,5 @@
                 FontSize="Large" />
 
         </StackLayout>
-    </ScrollView>
+   
 </ContentPage>
